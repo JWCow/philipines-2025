@@ -560,4 +560,25 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Collapsible Sections
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+    collapsibleSections.forEach(section => {
+        const header = section.querySelector('.section-header');
+        const content = section.querySelector('.section-content');
+        
+        // Set initial state - open by default
+        section.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        
+        header.addEventListener('click', () => {
+            section.classList.toggle('active');
+            
+            if(section.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        });
+    });
 }); 

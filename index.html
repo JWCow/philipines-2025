@@ -6,12 +6,15 @@
     <title>Philippines Trip Itinerary - May 2025</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Philippines Trip Itinerary</h1>
-            <p class="subtitle">May 2-12, 2025</p>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <h1>Philippines Trip Itinerary</h1>
+                <p class="subtitle">May 2-12, 2025</p>
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Itinerary Overview</a></li>
@@ -46,57 +49,57 @@
                 <div class="calendar-cell"></div>
                 <div class="calendar-cell"></div>
                 <div class="calendar-cell"></div>
-                <div class="calendar-cell travel-day" data-date="1">
+                <div class="calendar-cell travel-day manila-day" data-date="1">
                     <div class="date-number">1</div>
                     <div class="event-preview">9pm - Depart to the Airport</div>
                 </div>
-                <div class="calendar-cell arrival-day" data-date="2">
+                <div class="calendar-cell arrival-day manila-day" data-date="2">
                     <div class="date-number">2</div>
                     <div class="event-preview">1:10am Flight<br>5:15am Arrive in Manila</div>
                 </div>
-                <div class="calendar-cell free-day" data-date="3">
+                <div class="calendar-cell free-day manila-day" data-date="3">
                     <div class="date-number">3</div>
                     <div class="event-preview">Cart Witnessing<br>(Taco Bell)</div>
                 </div>
 
                 <!-- Week 2 -->
-                <div class="calendar-cell travel-day" data-date="4">
+                <div class="calendar-cell travel-day coron-day" data-date="4">
                     <div class="date-number">4</div>
                     <div class="event-preview">2:35pm - Depart<br>3:45pm - Arrive Coron</div>
                 </div>
-                <div class="calendar-cell tour-day" data-date="5">
+                <div class="calendar-cell tour-day coron-day" data-date="5">
                     <div class="date-number">5</div>
                     <div class="event-preview">Super Ultimate Tour</div>
                 </div>
-                <div class="calendar-cell tour-day" data-date="6">
+                <div class="calendar-cell tour-day coron-day" data-date="6">
                     <div class="date-number">6</div>
                     <div class="event-preview">Reef & Wreck Tour</div>
                 </div>
-                <div class="calendar-cell free-day" data-date="7">
+                <div class="calendar-cell free-day coron-day" data-date="7">
                     <div class="date-number">7</div>
                     <div class="event-preview">Free Day in Coron</div>
                 </div>
-                <div class="calendar-cell travel-day" data-date="8">
+                <div class="calendar-cell travel-day manila-day" data-date="8">
                     <div class="date-number">8</div>
                     <div class="event-preview">7:45am - Depart<br>8:55am - Arrive Manila</div>
                 </div>
-                <div class="calendar-cell event-day" data-date="9">
+                <div class="calendar-cell event-day manila-day" data-date="9">
                     <div class="date-number">9</div>
                     <div class="event-preview">Lunch @ Bethel<br>(Taco Bell)</div>
                 </div>
-                <div class="calendar-cell event-day" data-date="10">
+                <div class="calendar-cell event-day manila-day" data-date="10">
                     <div class="date-number">10</div>
                     <div class="event-preview">KMS</div>
                 </div>
 
                 <!-- Week 3 -->
-                <div class="calendar-cell free-day" data-date="11">
+                <div class="calendar-cell free-day manila-day" data-date="11">
                     <div class="date-number">11</div>
                     <div class="event-preview">Divisoria Shopping / Moe Mating</div>
                 </div>
-                <div class="calendar-cell departure-day" data-date="12">
+                <div class="calendar-cell departure-day manila-day" data-date="12">
                     <div class="date-number">12</div>
-                    <div class="event-preview">7:35pm - Depart Manila<br>9:20pm - Arrive Ho Chi Minh</div>
+                    <div class="event-preview">7:35pm - Depart Manila<br>9:20pm - Arrive Ho Chi Minh City</div>
                 </div>
                 <div class="calendar-cell" data-date="13">
                     <div class="date-number">13</div>
@@ -123,6 +126,8 @@
             <div class="legend-item"><span class="color-marker tour-day"></span> Tour</div>
             <div class="legend-item"><span class="color-marker event-day"></span> Special Event</div>
             <div class="legend-item"><span class="color-marker free-day"></span> Free Day</div>
+            <div class="legend-item"><span class="color-marker manila-day"></span> Manila</div>
+            <div class="legend-item"><span class="color-marker coron-day"></span> Coron</div>
         </div>
 
         <!-- Calendar Day Details (Hidden by default) -->
@@ -138,204 +143,247 @@
     </section>
 
     <main class="container">
-        <section id="trip-summary">
-            <h2>Trip Summary</h2>
-            <div class="trip-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">2</span>
+        <section id="trip-summary" class="collapsible-section">
+            <div class="section-header">
+                <h2>Trip Summary</h2>
+                <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="section-content">
+                <div class="trip-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">2</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Arrive in Manila</h3>
+                            <p>Flight from Ho Chi Minh City (SGN) to Manila (MNL)</p>
+                            <p>Cebu Pacific 5J 752 - 01:10AM to 05:15AM</p>
+                            <p>Staying with the Sheltons</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Arrive in Manila</h3>
-                        <p>Flight from Ho Chi Minh City (SGN) to Manila (MNL)</p>
-                        <p>Cebu Pacific 5J 752 - 01:10AM to 05:15AM</p>
-                        <p>Staying with the Sheltons</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">4</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">4</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Travel to Coron</h3>
+                            <p>Flight from Manila (MNL) to Coron/Busuanga (USU)</p>
+                            <p>Philippine Airlines PR 2965 - 14:35PM to 15:45PM</p>
+                            <p>Check in to Airbnb accommodations</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Travel to Coron</h3>
-                        <p>Flight from Manila (MNL) to Coron/Busuanga (USU)</p>
-                        <p>Philippine Airlines PR 2965 - 14:35PM to 15:45PM</p>
-                        <p>Check in to Airbnb accommodations</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">5</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">5</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Super Ultimate Tour</h3>
+                            <p>9:00AM - 6:00PM</p>
+                            <p>Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck</p>
+                            <p><span class="price">₱1900 ($34 USD)</span> per person</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Super Ultimate Tour</h3>
-                        <p>9:00AM - 6:00PM</p>
-                        <p>Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck</p>
-                        <p><span class="price">₱1900 ($34 USD)</span> per person</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">6</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">6</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Reef & Wreck Tour</h3>
+                            <p>9:00AM - 6:00PM</p>
+                            <p>Pass Island • Sangat coral garden • Lusong shipwreck</p>
+                            <p><span class="price">₱1700 ($30 USD)</span> per person + $10 for snorkel rental</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Reef & Wreck Tour</h3>
-                        <p>9:00AM - 6:00PM</p>
-                        <p>Pass Island • Sangat coral garden • Lusong shipwreck</p>
-                        <p><span class="price">₱1700 ($30 USD)</span> per person + $10 for snorkel rental</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">7</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">7</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Free Day in Coron</h3>
+                            <p>Explore the town or relax at the beach</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Free Day in Coron</h3>
-                        <p>Explore the town or relax at the beach</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">8</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">8</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Return to Manila</h3>
+                            <p>Flight from Coron/Busuanga (USU) to Manila (MNL)</p>
+                            <p>Philippine Airlines PR 2962 - 07:45AM to 08:55AM</p>
+                            <p>Stay at Witness family guest house near KMS venue</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Return to Manila</h3>
-                        <p>Flight from Coron/Busuanga (USU) to Manila (MNL)</p>
-                        <p>Philippine Airlines PR 2962 - 07:45AM to 08:55AM</p>
-                        <p>Stay at Witness family guest house near KMS venue</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">9</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">9</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Bethel Lunch</h3>
+                            <p>Special lunch at Bethel</p>
                         </div>
                     </div>
-                    <div class="timeline-content">
-                        <h3>Bethel Lunch</h3>
-                        <p>Special lunch at Bethel</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <div class="date-circle">
-                            <span class="month">May</span>
-                            <span class="day">12</span>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="date-circle">
+                                <span class="month">May</span>
+                                <span class="day">12</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Return to Ho Chi Minh City</h3>
-                        <p>Flight from Manila (MNL) to Ho Chi Minh City (SGN)</p>
-                        <p>Cebu Pacific 5J 753 - 07:35PM to 09:20PM</p>
+                        <div class="timeline-content">
+                            <h3>Return to Ho Chi Minh City</h3>
+                            <p>Flight from Manila (MNL) to Ho Chi Minh City (SGN)</p>
+                            <p>Cebu Pacific 5J 753 - 07:35PM to 09:20PM</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="cost-summary">
-            <h2>Cost Summary</h2>
-            
-            <div class="cost-cards">
-                <div class="cost-card">
-                    <h3>Accommodations</h3>
-                    <div class="cost-item">
-                        <span>Room 1: Moe and Thu</span>
-                        <span class="price">₱8,125 ($145 USD)</span>
+        <section id="cost-summary" class="collapsible-section">
+            <div class="section-header">
+                <h2>Cost Summary</h2>
+                <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="section-content">
+                <div class="cost-cards">
+                    <div class="cost-card">
+                        <h3>Accommodations</h3>
+                        <div class="cost-item">
+                            <span>Manila (Shelton's Home): May 2-4</span>
+                            <span class="price">No Cost</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Coron: Room 1 (Moe and Thu)</span>
+                            <span class="price">₱8,125 ($145 USD)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Coron: Room 2 (Jesse and Huong)</span>
+                            <span class="price">₱7,304 ($130 USD)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Manila (Witness Family Guest House): May 8-12</span>
+                            <span class="price">₱5,600 ($100 USD)</span>
+                        </div>
                     </div>
-                    <div class="cost-item">
-                        <span>Room 2: Jesse and Huong</span>
-                        <span class="price">₱7,304 ($130 USD)</span>
+                    
+                    <div class="cost-card">
+                        <h3>Tours</h3>
+                        <div class="cost-item">
+                            <span>Super Ultimate Tour (per person)</span>
+                            <span class="price">₱1,900 ($34 USD)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Reef & Wreck Tour (per person)</span>
+                            <span class="price">₱1,700 ($30 USD)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Snorkel Rental</span>
+                            <span class="price">₱560 ($10 USD)</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="cost-card">
-                    <h3>Tours</h3>
-                    <div class="cost-item">
-                        <span>Super Ultimate Tour (per person)</span>
-                        <span class="price">₱1,900 ($34 USD)</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Reef & Wreck Tour (per person)</span>
-                        <span class="price">₱1,700 ($30 USD)</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Snorkel Rental</span>
-                        <span class="price">₱560 ($10 USD)</span>
-                    </div>
-                </div>
-                
-                <div class="cost-card">
-                    <h3>Additional Expenses</h3>
-                    <div class="cost-item">
-                        <span>SIM Card (10 days)</span>
-                        <span class="price">₱560 ($10 USD)</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Airport Transfer</span>
-                        <span class="price">₱500 ($9 USD)</span>
+                    
+                    <div class="cost-card">
+                        <h3>Additional Expenses</h3>
+                        <div class="cost-item">
+                            <span>SIM Card (10 days)</span>
+                            <span class="price">₱560 ($10 USD)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Airport Transfer</span>
+                            <span class="price">₱500 ($9 USD)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="key-locations">
-            <h2>Key Locations</h2>
-            
-            <div class="location-cards">
-                <div class="location-card">
-                    <h3>Manila</h3>
-                    <div class="location-details">
-                        <div class="location-item">
-                            <h4>May 2-4: Shelton's Home</h4>
-                            <p>Located near Taco Bell and Airport</p>
+        <section id="key-locations" class="collapsible-section">
+            <div class="section-header">
+                <h2>Key Locations</h2>
+                <button class="toggle-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="section-content">
+                <div class="location-cards">
+                    <div class="location-card">
+                        <h3>Manila</h3>
+                        <div class="location-details">
+                            <div class="location-item">
+                                <h4>May 2-4: Shelton's Home</h4>
+                                <p>Located near Taco Bell and Airport</p>
+                            </div>
+                            <div class="location-item">
+                                <h4>May 8-12: Witness Family Guest House</h4>
+                                <p>Located near KMS venue</p>
+                            </div>
+                            <div class="location-item">
+                                <h4>Food Places:</h4>
+                                <p>Denny's - <a href="https://dennys.ph/" target="_blank">https://dennys.ph/</a></p>
+                                <p>Taco Bell - Moises's requested place</p>
+                            </div>
                         </div>
-                        <div class="location-item">
-                            <h4>May 8-12: Witness Family Guest House</h4>
-                            <p>Located near KMS venue</p>
-                        </div>
-                        <div class="location-item">
-                            <h4>Food Places:</h4>
-                            <p>Denny's - <a href="https://dennys.ph/" target="_blank">https://dennys.ph/</a></p>
-                            <p>Taco Bell - Moises's requested place</p>
+                    </div>
+                    
+                    <div class="location-card">
+                        <h3>Coron</h3>
+                        <div class="location-details">
+                            <div class="location-item">
+                                <h4>Airbnb Accommodations:</h4>
+                                <p>Room 1: <a href="https://www.airbnb.com/t/EY2YQBYE" target="_blank">Moe and Thu Room</a></p>
+                                <p>Room 2: <a href="https://www.airbnb.com/t/fw7R37VJ" target="_blank">Jesse and Huong Room</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="location-card">
-                    <h3>Coron</h3>
-                    <div class="location-details">
-                        <div class="location-item">
-                            <h4>Airbnb Accommodations:</h4>
-                            <p>Room 1: <a href="https://www.airbnb.com/t/EY2YQBYE" target="_blank">Moe and Thu Room</a></p>
-                            <p>Room 2: <a href="https://www.airbnb.com/t/fw7R37VJ" target="_blank">Jesse and Huong Room</a></p>
-                        </div>
-                    </div>
+            </div>
+        </section>
+        
+        <section class="featured-images">
+            <h2>Philippines Highlights</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Coron Island Lagoon">
+                    <div class="image-caption">Twin Lagoon, Coron</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552939588-56c5935eedde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Manila Skyline">
+                    <div class="image-caption">Manila Skyline</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551461646-33dfd4ea5346?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Palawan Beach">
+                    <div class="image-caption">Beaches of Palawan</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Philippine Rice Terraces">
+                    <div class="image-caption">Philippine Culture</div>
                 </div>
             </div>
         </section>
@@ -343,7 +391,7 @@
         <div class="cta-buttons">
             <a href="flights.html" class="btn-primary">View Flight Details</a>
             <a href="tours.html" class="btn-primary">View Tour Details</a>
-            <a href="planner.html" class="btn-primary">Plan Additional Tours</a>
+            <a href="food.html" class="btn-primary">View Food Options</a>
         </div>
     </main>
 
