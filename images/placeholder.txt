@@ -1,0 +1,13 @@
+The following images should be added to this directory:
+
+1. logo.png - Logo of Marvelous Travel & Tours
+2. el-nido.jpg - Image of El Nido Island for activity suggestion
+3. manila.jpg - Image for the Art In Island in Manila activity
+
+If you want to use actual images, you would need to:
+1. Get appropriate images with proper licensing
+2. Resize them to appropriate dimensions:
+   - Logo: Approximately 200x60px
+   - Activity thumbnails: 120x90px
+
+For a complete implementation, you may also want to add images for each tour destination. 

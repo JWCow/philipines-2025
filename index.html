@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coron Tour Itinerary Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Marvelous Travel & Tours" class="logo">
+            <h1>Coron Private Tour</h1>
+            <div class="contact-info">
+                <p>Contact: 09175555117 / 09506329169</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="itinerary">
+            <h2>Your Itinerary</h2>
+            
+            <div class="bookings">
+                <div class="booking-item">
+                    <div class="booking-header">
+                        <h3>4 May - Sunday</h3>
+                        <span class="tag confirmed">Confirmed</span>
+                        <span class="booking-id">ID: 1603008788</span>
+                    </div>
+                    <div class="flight-info">
+                        <div class="airline">
+                            <span class="airline-logo">PR 2965</span>
+                            <span class="airline-ref">Airline ref: SP976K</span>
+                        </div>
+                        <div class="journey">
+                            <div class="departure">
+                                <span class="time">14:35</span>
+                                <div class="location">
+                                    <span class="airport">Manila (MNL)</span>
+                                    <span class="airport-name">Ninoy Aquino International Airport</span>
+                                </div>
+                            </div>
+                            <div class="flight-duration">1h 10m</div>
+                            <div class="arrival">
+                                <span class="time">15:45</span>
+                                <div class="location">
+                                    <span class="airport">Palawan (USU)</span>
+                                    <span class="airport-name">Francisco B. Reyes Airport</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">Manage</button>
+                        <button class="btn-secondary">Contact us</button>
+                    </div>
+                    <div class="activity-suggestions">
+                        <h4>Find things to do in Palawan</h4>
+                        <div class="activity-card">
+                            <img src="images/el-nido.jpg" alt="El Nido Island">
+                            <div class="activity-info">
+                                <h5>El Nido Island Hopping Tour A with Lunch</h5>
+                                <div class="rating">★ 4.1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-item">
+                    <div class="booking-header">
+                        <h3>8 May - Thursday</h3>
+                        <span class="tag confirmed">Confirmed</span>
+                        <span class="booking-id">ID: 1603008789</span>
+                    </div>
+                    <div class="flight-info">
+                        <div class="airline">
+                            <span class="airline-logo">PR 2962</span>
+                            <span class="airline-ref">Airline ref: 487IMR</span>
+                        </div>
+                        <div class="journey">
+                            <div class="departure">
+                                <span class="time">07:45</span>
+                                <div class="location">
+                                    <span class="airport">Palawan (USU)</span>
+                                    <span class="airport-name">Francisco B. Reyes Airport</span>
+                                </div>
+                            </div>
+                            <div class="flight-duration">1h 10m</div>
+                            <div class="arrival">
+                                <span class="time">08:55</span>
+                                <div class="location">
+                                    <span class="airport">Manila (MNL)</span>
+                                    <span class="airport-name">Ninoy Aquino International Airport</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-primary">Manage</button>
+                        <button class="btn-secondary">Contact us</button>
+                    </div>
+                    <div class="activity-suggestions">
+                        <h4>Find things to do in Manila</h4>
+                        <div class="activity-card">
+                            <img src="images/manila.jpg" alt="Art In Island">
+                            <div class="activity-info">
+                                <h5>Art In Island Ticket in Manila</h5>
+                                <div class="rating">★ 4.8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tour-planner">
+            <h2>Tour Planner</h2>
+            <p>Plan your Coron adventure with our exclusive tours</p>
+            
+            <div class="tour-selector">
+                <div class="tour-options">
+                    <h3>Available Tours</h3>
+                    <div class="tours-grid">
+                        <div class="tour-card" data-tour="town-tour">
+                            <h4>Town Tour</h4>
+                            <p class="tour-time">3/4pm - 8pm</p>
+                            <p class="tour-price">₱1000 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Lualhati park • Mt Tapyas View Deck • Cashew site • Souvenir shops • Coron Circle • Maquinit hotspring</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="mt-talapay">
+                            <h4>Mt. Talapay & Town Tour</h4>
+                            <p class="tour-time">2pm - 8pm</p>
+                            <p class="tour-price">Private tour from ₱6500</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Mt Talapay • Lualhati park • Mt Tapyas View Deck • Cashew site • Souvenir shops • Coron Circle • Maquinit hotspring</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="tour-a">
+                            <h4>Tour A</h4>
+                            <p class="tour-time">9am - 6pm</p>
+                            <p class="tour-price">₱1200 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Kayangan lake • CYC • Coral garden • Quinn reef • Green lagoon</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="tour-b">
+                            <h4>Tour B</h4>
+                            <p class="tour-time">9am - 6pm</p>
+                            <p class="tour-price">₱1400 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Barracuda lake • Twin lagoon • Reef garden • Banol beach • Balinsasayaw</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="super-ultimate">
+                            <h4>Super Ultimate</h4>
+                            <p class="tour-time">9am - 6pm</p>
+                            <p class="tour-price">₱1900 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="island-escapade">
+                            <h4>Island Escapade</h4>
+                            <p class="tour-time">9am - 6pm</p>
+                            <p class="tour-price">₱1700 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Malcapuya island /Ditaytayan • Banana island • Coco Beach/Bulog Dos</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="reef-wreck">
+                            <h4>Reef & Wreck</h4>
+                            <p class="tour-time">9am - 6pm</p>
+                            <p class="tour-price">₱1700 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Pass Island • Sangat coral garden • Lusong shipwreck</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="calauit">
+                            <h4>Calauit Safari</h4>
+                            <p class="tour-time">7am - 6pm</p>
+                            <p class="tour-price">₱2800 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Calauit wildlife sanctuary • Black island Cave & Beach • Buluang Fishpond</p>
+                            </div>
+                        </div>
+
+                        <div class="tour-card" data-tour="dugong">
+                            <h4>Dugong Watching</h4>
+                            <p class="tour-time">6 hours (5am to 7am - 1pm to 2pm)</p>
+                            <p class="tour-price">₱3700 per person (joiners rate)</p>
+                            <button class="btn-select">Select Tour</button>
+                            <div class="tour-details">
+                                <p>Dugong area</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-summary">
+                    <h3>Your Selected Tours</h3>
+                    <div class="selected-tours">
+                        <p class="empty-state">No tours selected yet</p>
+                        <!-- Selected tours will be added here via JavaScript -->
+                    </div>
+                    
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span>Airport Transfer:</span>
+                            <span>₱500 (two-way)</span>
+                        </div>
+                        <div class="total">
+                            <span>Total:</span>
+                            <span>₱500</span>
+                        </div>
+                    </div>
+                    
+                    <button id="book-now" class="btn-book">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tour-prices">
+            <h2>Tour Price List</h2>
+            
+            <div class="price-tables">
+                <div class="private-rates">
+                    <h3>Private Tour Rates</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tour</th>
+                                <th>1 pax</th>
+                                <th>2-3 pax</th>
+                                <th>4-5 pax</th>
+                                <th>6-8 pax</th>
+                                <th>9-12 pax</th>
+                                <th>13-15 pax</th>
+                                <th>16 or more</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RT Airport Transfer</td>
+                                <td>₱3500</td>
+                                <td>₱1700</td>
+                                <td>₱1200</td>
+                                <td>₱1000</td>
+                                <td>₱800</td>
+                                <td>₱600</td>
+                                <td>₱500</td>
+                            </tr>
+                            <tr>
+                                <td>Town Tour</td>
+                                <td>₱3200</td>
+                                <td>₱2000</td>
+                                <td>₱1400</td>
+                                <td>₱1200</td>
+                                <td>₱1100</td>
+                                <td>₱1100</td>
+                                <td>₱950</td>
+                            </tr>
+                            <tr>
+                                <td>Town Tour w/Mt Talapay</td>
+                                <td>₱6500</td>
+                                <td>₱4300</td>
+                                <td>₱3200</td>
+                                <td>₱2700</td>
+                                <td>₱2400</td>
+                                <td>₱1800</td>
+                                <td>₱1800</td>
+                            </tr>
+                            <tr>
+                                <td>Tour A</td>
+                                <td>₱7300</td>
+                                <td>₱3800</td>
+                                <td>₱2700</td>
+                                <td>₱2400</td>
+                                <td>₱2200</td>
+                                <td>₱2100</td>
+                                <td>₱2000</td>
+                            </tr>
+                            <tr>
+                                <td>Tour B</td>
+                                <td>₱7600</td>
+                                <td>₱3900</td>
+                                <td>₱2700</td>
+                                <td>₱2600</td>
+                                <td>₱2400</td>
+                                <td>₱2100</td>
+                                <td>₱2000</td>
+                            </tr>
+                            <tr>
+                                <td>Super Ultimate</td>
+                                <td>₱8100</td>
+                                <td>₱4400</td>
+                                <td>₱3300</td>
+                                <td>₱2900</td>
+                                <td>₱2700</td>
+                                <td>₱2300</td>
+                                <td>₱2100</td>
+                            </tr>
+                            <tr>
+                                <td>Island Escapade</td>
+                                <td>₱8100</td>
+                                <td>₱4300</td>
+                                <td>₱3200</td>
+                                <td>₱2900</td>
+                                <td>₱2700</td>
+                                <td>₱2300</td>
+                                <td>₱2100</td>
+                            </tr>
+                            <tr>
+                                <td>Reef & Wreck</td>
+                                <td>₱8100</td>
+                                <td>₱4100</td>
+                                <td>₱2800</td>
+                                <td>₱2900</td>
+                                <td>₱2700</td>
+                                <td>₱2300</td>
+                                <td>₱2100</td>
+                            </tr>
+                            <tr>
+                                <td>Calauit Safari</td>
+                                <td>₱12200</td>
+                                <td>₱7700</td>
+                                <td>₱4400</td>
+                                <td>₱3800</td>
+                                <td>₱3300</td>
+                                <td>₱3200</td>
+                                <td>₱3100</td>
+                            </tr>
+                            <tr>
+                                <td>Dugong Watching</td>
+                                <td>₱20000</td>
+                                <td>₱9000</td>
+                                <td>₱8000</td>
+                                <td>₱7500</td>
+                                <td>₱7000</td>
+                                <td>₱6500</td>
+                                <td>₱6000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="joiners-rates">
+                    <h3>Joiners Rate - Per Person</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tour</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coron Town Tour</td>
+                                <td>₱1000</td>
+                            </tr>
+                            <tr>
+                                <td>Tour A</td>
+                                <td>₱1200</td>
+                            </tr>
+                            <tr>
+                                <td>Tour B</td>
+                                <td>₱1400</td>
+                            </tr>
+                            <tr>
+                                <td>Super Ultimate Tour</td>
+                                <td>₱1900</td>
+                            </tr>
+                            <tr>
+                                <td>Island Escapade</td>
+                                <td>₱1700</td>
+                            </tr>
+                            <tr>
+                                <td>Reef & Wreck</td>
+                                <td>₱1700</td>
+                            </tr>
+                            <tr>
+                                <td>Calauit Safari Tour</td>
+                                <td>₱2800</td>
+                            </tr>
+                            <tr>
+                                <td>Dugong Watching</td>
+                                <td>₱3700</td>
+                            </tr>
+                            <tr>
+                                <td>Airport Van transfer 2 way</td>
+                                <td>₱500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-info">
+                    <img src="images/logo.png" alt="Marvelous Travel & Tours" class="footer-logo">
+                    <h3>Marvelous Travel & Tours</h3>
+                    <p>Contact: 09175555117 / 09506329169</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#itinerary">Itinerary</a></li>
+                        <li><a href="#tour-planner">Tour Planner</a></li>
+                        <li><a href="#tour-prices">Price List</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Marvelous Travel & Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
