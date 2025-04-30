@@ -234,7 +234,6 @@ section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    padding: 0; /* Reset padding */
 }
 
 .collapsible-section.active .section-content {
