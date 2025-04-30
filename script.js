@@ -567,9 +567,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const header = section.querySelector('.section-header');
         const content = section.querySelector('.section-content');
         
-        // Set initial state - open by default
-        section.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 'px';
+        // Set initial state - closed by default
+        section.classList.remove('active');
+        content.style.maxHeight = '0';
         
         header.addEventListener('click', () => {
             section.classList.toggle('active');
