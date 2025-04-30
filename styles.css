@@ -347,11 +347,11 @@ section:hover {
 
 /* Manila and Coron Styles */
 .manila-day {
-    border-top: 3px solid var(--manila-color);
+    border-top: 6px solid var(--manila-color);
 }
 
 .coron-day {
-    border-top: 3px solid var(--coron-color);
+    border-top: 6px solid var(--coron-color);
 }
 
 .color-marker.manila-day {

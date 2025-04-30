@@ -6,6 +6,52 @@
     <title>Philippines May 2025 - Tour Details</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific styles for tours page */
+        #tour-hero {
+             padding: 3rem 1.5rem;
+             background: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+             border-radius: 12px;
+             text-align: center;
+             color: white;
+             margin-bottom: 2rem;
+         }
+         #tour-hero h2 {
+             font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 0.5rem;
+         }
+         #tour-hero p {
+             font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); max-width: 600px; margin: 0 auto;
+         }
+        .tour-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden; /* Ensures border radius applies to table */
+        }
+        .tour-table th, .tour-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+        .tour-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        .tour-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+        .tour-table tr:hover {
+            background-color: var(--light-color);
+        }
+        .tour-table td:last-child {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -27,84 +73,152 @@
     </header>
 
     <main class="container">
+        <section id="tour-hero">
+            <h2>Explore Coron</h2>
+            <p>Discover the stunning islands, lagoons, and underwater world of Coron with these amazing tours.</p>
+        </section>
+
         <section id="confirmed-tours">
-            <h2>Confirmed Tours</h2>
-            <p class="section-intro">We've settled on two exciting tours during our stay in Coron!</p>
-            
-            <div class="booked-tours">
-                <div class="booked-tour">
-                    <div class="tour-header">
-                        <h4>Super Ultimate Tour</h4>
-                        <p>Monday, May 5, 2025</p>
-                    </div>
-                    <div class="tour-body">
-                        <p class="tour-time">9:00 AM - 6:00 PM</p>
-                        <p class="tour-locations">
-                            Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck
-                        </p>
-                        <div class="tour-price-details">
-                            <span class="price-label">Tour Price:</span>
-                            <span class="price-amount">₱1,900 ($34 USD)</span>
-                            <span class="price-note">per person</span>
-                        </div>
-                        <div class="tour-extras">
-                            <p>Includes: Boat, tour guide, entrance fees, lunch, life vests</p>
-                            <p>What to bring: Swimwear, sunscreen, towel, water, camera, extra clothes</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booked-tour">
-                    <div class="tour-header">
-                        <h4>Reef & Wreck Tour</h4>
-                        <p>Tuesday, May 6, 2025</p>
-                    </div>
-                    <div class="tour-body">
-                        <p class="tour-time">9:00 AM - 6:00 PM</p>
-                        <p class="tour-locations">
-                            Pass Island • Sangat coral garden • Lusong shipwreck
-                        </p>
-                        <div class="tour-price-details">
-                            <span class="price-label">Tour Price:</span>
-                            <span class="price-amount">₱1,700 ($30 USD)</span>
-                            <span class="price-note">per person</span>
-                        </div>
-                        <div class="tour-price-details">
-                            <span class="price-label">Snorkel Rental:</span>
-                            <span class="price-amount">₱560 ($10 USD)</span>
-                            <span class="price-note">per person</span>
-                        </div>
-                        <div class="tour-extras">
-                            <p>Includes: Boat, tour guide, entrance fees, lunch, life vests</p>
-                            <p>What to bring: Swimwear, sunscreen, towel, water, camera, extra clothes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+            <h2>Confirmed Tour Package</h2>
+            <p class="section-intro">We have booked the following package covering our tours and airport transfer:</p>
+
             <div class="tour-summary-card">
-                <h3>Tour Booking Summary</h3>
+                <h3>Tour & Transfer Package Summary</h3>
                 <div class="summary-details">
                     <div class="summary-row">
-                        <span>Tour Package (Super Ultimate + Reef & Wreck + Airport Transfer)</span>
-                        <span class="price">₱4,300 / person</span>
+                        <span>Package Includes:</span>
+                        <span>Super Ultimate Tour, Reef & Wreck Tour, 2-Way Airport Transfer</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Price per Person:</span>
+                        <span class="price">₱4,300</span>
                     </div>
                     <div class="summary-row total">
-                        <span>Total Tour Costs (4 people)</span>
+                        <span>Total Cost (4 people):</span>
                         <span class="price">₱17,200 ($307 USD approx.)</span>
                     </div>
                 </div>
             </div>
-            
+
+            <div class="booked-tours">
+                <div class="booked-tour">
+                    <div class="tour-header">
+                        <h4>Super Ultimate Tour</h4>
+                        <p>Scheduled for: Monday, May 5, 2025</p>
+                    </div>
+                    <div class="tour-body">
+                        <p class="tour-time">9:00 AM - 6:00 PM</p>
+                        <p class="tour-locations">Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck</p>
+                        <div class="tour-extras">
+                            <p>Includes: Boat, tour guide, entrance fees, lunch, life vests</p>
+                            <p>What to bring: Swimwear, sunscreen, towel, water, camera, extra clothes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booked-tour">
+                    <div class="tour-header">
+                        <h4>Reef & Wreck Tour</h4>
+                        <p>Scheduled for: Tuesday, May 6, 2025</p>
+                    </div>
+                    <div class="tour-body">
+                        <p class="tour-time">9:00 AM - 6:00 PM</p>
+                        <p class="tour-locations">Pass Island • Sangat coral garden • Lusong shipwreck</p>
+                        <!-- Removed individual price as it's part of package -->
+                        <div class="tour-extras">
+                            <p>Includes: Boat, tour guide, entrance fees, lunch, life vests</p>
+                            <p>What to bring: Swimwear, sunscreen, towel, water, camera, extra clothes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="tour-notes">
                 <h4>Important Notes</h4>
                 <ul>
                     <li>Tours are weather-dependent and may be rescheduled if conditions are poor.</li>
-                    <li>All tours are provided by Marvelous Travel & Tours (Contact: 09175555117 / 09506329169)</li>
+                    <li>All tours and transfers provided by Marvelous Travel & Tours (Contact: 09175555117 / 09506329169)</li>
                     <li>Please be at the meeting point 15 minutes before the scheduled departure time.</li>
-                    <li>Don't forget to bring some cash for additional expenses or optional activities.</li>
+                    <li>Snorkel rental is often available for an additional fee if not included.</li>
                 </ul>
             </div>
+        </section>
+
+        <section id="available-tours">
+            <h2>Available Coron Tours (Reference)</h2>
+            <p class="section-intro">Here's a list of standard tours offered by Marvelous Travel & Tours for reference:</p>
+            <table class="tour-table">
+                <thead>
+                    <tr>
+                        <th>Tour Name</th>
+                        <th>Destinations</th>
+                        <th>Time</th>
+                        <th>Joiner Rate (PHP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coron Town Tour</td>
+                        <td>Lualhati park • Mt Tapyas View Deck • Cashew site • Souvenir shops • Coron Circle • Maquinit hotspring</td>
+                        <td>3/4pm - 8pm</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>Mt. Talapay & Town Tour</td>
+                        <td>Mt Talapay • Lualhati park • Mt Tapyas View Deck • Cashew site • Souvenir shops • Coron Circle • Maquinit hotspring</td>
+                        <td>2pm - 8pm</td>
+                        <td>N/A (Often private)</td>
+                    </tr>
+                    <tr>
+                        <td>Tour A</td>
+                        <td>Kayangan lake • CYC • Coral garden • Quinn reef • Green lagoon</td>
+                        <td>9am - 5pm</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td>Tour B</td>
+                        <td>Barracuda lake • Twin lagoon • Reef garden • Banol beach • Balinsasayaw</td>
+                        <td>9am - 5pm</td>
+                        <td>1400</td>
+                    </tr>
+                    <tr>
+                        <td>Super Ultimate Tour</td>
+                        <td>Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck</td>
+                        <td>9am - 5pm</td>
+                        <td>1900</td>
+                    </tr>
+                     <tr>
+                        <td>Island Escapade</td>
+                        <td>Malcapuya island / Ditaytayan • Banana island • Coco Beach/Bulog Dos</td>
+                        <td>9am - 5pm</td>
+                        <td>1700</td>
+                    </tr>
+                    <tr>
+                        <td>Reef & Wreck</td>
+                        <td>Pass Island • Sangat coral garden • Lusong shipwreck</td>
+                        <td>9am - 5pm</td>
+                        <td>1700</td>
+                    </tr>
+                    <tr>
+                        <td>Calauit Safari Tour</td>
+                        <td>Calauit wildlife sanctuary • Black island Cave & Beach • Buluang Fishpond</td>
+                        <td>7am - 5pm</td>
+                        <td>2800</td>
+                    </tr>
+                     <tr>
+                        <td>Dugong Watching</td>
+                        <td>Dugong area</td>
+                        <td>6 hours</td>
+                        <td>3700</td>
+                    </tr>
+                     <tr>
+                        <td>Airport Van Transfer (2 way)</td>
+                        <td>Airport - Town - Airport</td>
+                        <td>N/A</td>
+                        <td>500</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
@@ -121,6 +235,7 @@
                         <li><a href="flights.html">Flights</a></li>
                         <li><a href="accommodations.html">Accommodations</a></li>
                         <li><a href="tours.html">Tours</a></li>
+                        <li><a href="food.html">Food</a></li>
                     </ul>
                 </div>
             </div>

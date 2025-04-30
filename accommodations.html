@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippines May 2025 - Accommodations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific styles for accommodations page */
+        #accom-hero {
+             padding: 3rem 1.5rem;
+             background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+             border-radius: 12px;
+             text-align: center;
+             color: white;
+             margin-bottom: 2rem;
+         }
+         #accom-hero h2 {
+             font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 0.5rem;
+         }
+         #accom-hero p {
+             font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); max-width: 600px; margin: 0 auto;
+         }
+        .accom-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .accom-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .accom-card:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+        .accom-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--gray);
+            padding-bottom: 0.5rem;
+        }
+        .accom-detail {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .accom-detail strong {
+            color: var(--dark-color);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .accom-detail a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        .accom-detail a:hover {
+            color: var(--primary-color);
+        }
+        .accom-detail .price {
+            font-weight: 600;
+            color: var(--success-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <h1>Philippines May 2025</h1>
+                <p class="subtitle">Accommodation Details</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Itinerary Overview</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="accommodations.html" class="active">Accommodations</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="food.html">Food</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="accom-hero">
+            <h2>Where We're Staying</h2>
+            <p>Details about our accommodations in Manila and Coron.</p>
+        </section>
+
+        <section id="accommodation-details">
+            <h2>Accommodation Breakdown</h2>
+            <div class="accom-cards">
+
+                <div class="accom-card">
+                    <h3>Manila: May 2-4</h3>
+                    <div class="accom-detail">
+                        <strong>Location:</strong>
+                        <span>Shelton's Home</span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Notes:</strong>
+                        <span>Located near Taco Bell and Airport.</span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Cost:</strong>
+                        <span class="price">No Cost</span>
+                    </div>
+                </div>
+
+                <div class="accom-card">
+                    <h3>Coron: May 4-8 (Room 1)</h3>
+                    <div class="accom-detail">
+                        <strong>Occupants:</strong>
+                        <span>Moe and Thu</span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Booking Link:</strong>
+                        <span><a href="https://www.airbnb.com/t/EY2YQBYE" target="_blank">View on Airbnb</a></span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Cost:</strong>
+                        <span class="price">₱8,125 ($145 USD)</span>
+                    </div>
+                </div>
+
+                <div class="accom-card">
+                    <h3>Coron: May 4-8 (Room 2)</h3>
+                     <div class="accom-detail">
+                        <strong>Occupants:</strong>
+                        <span>Jesse and Huong</span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Booking Link:</strong>
+                        <span><a href="https://www.airbnb.com/t/fw7R37VJ" target="_blank">View on Airbnb</a></span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Cost:</strong>
+                        <span class="price">₱7,304 ($130 USD)</span>
+                    </div>
+                </div>
+
+                <div class="accom-card">
+                    <h3>Manila: May 8-12</h3>
+                     <div class="accom-detail">
+                        <strong>Location:</strong>
+                        <span>Witness Family Guest House</span>
+                    </div>
+                      <div class="accom-detail">
+                        <strong>Notes:</strong>
+                        <span>Located near KMS venue.</span>
+                    </div>
+                    <div class="accom-detail">
+                        <strong>Cost:</strong>
+                        <span class="price">₱5,600 ($100 USD)</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="company-info">
+                    <h3>Marvelous Travel & Tours</h3>
+                    <p>Contact: 09175555117 / 09506329169</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Itinerary Overview</a></li>
+                        <li><a href="flights.html">Flights</a></li>
+                        <li><a href="accommodations.html">Accommodations</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="food.html">Food</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Marvelous Travel & Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
