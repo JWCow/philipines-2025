@@ -790,4 +790,543 @@ footer {
     .coron-rooms {
         grid-template-columns: 1fr;
     }
+}
+
+/* Calendar Styles */
+#trip-calendar {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.month-grid-calendar {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.month-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.month-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.weekdays-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-left: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+.calendar-cell {
+    height: 100px;
+    padding: 5px;
+    border-right: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+    position: relative;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.calendar-cell:hover {
+    background-color: rgba(173, 232, 244, 0.2);
+}
+
+.date-number {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.event-preview {
+    font-size: 0.8rem;
+    color: var(--gray-dark);
+    line-height: 1.4;
+}
+
+/* Calendar Day Colors */
+.arrival-day {
+    background-color: rgba(87, 204, 153, 0.2);
+    border-left: 4px solid var(--success-color);
+}
+
+.departure-day {
+    background-color: rgba(230, 57, 70, 0.1);
+    border-left: 4px solid var(--danger-color);
+}
+
+.travel-day {
+    background-color: rgba(255, 183, 3, 0.2);
+    border-left: 4px solid var(--warning-color);
+}
+
+.tour-day {
+    background-color: rgba(72, 202, 228, 0.2);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.event-day {
+    background-color: rgba(2, 62, 138, 0.1);
+    border-left: 4px solid var(--dark-color);
+}
+
+.free-day {
+    background-color: rgba(173, 232, 244, 0.2);
+    border-left: 4px solid var(--light-color);
+}
+
+/* Calendar Legend */
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: var(--shadow);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.color-marker {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.color-marker.arrival-day {
+    background-color: rgba(87, 204, 153, 0.5);
+    border: 1px solid var(--success-color);
+}
+
+.color-marker.departure-day {
+    background-color: rgba(230, 57, 70, 0.3);
+    border: 1px solid var(--danger-color);
+}
+
+.color-marker.travel-day {
+    background-color: rgba(255, 183, 3, 0.4);
+    border: 1px solid var(--warning-color);
+}
+
+.color-marker.tour-day {
+    background-color: rgba(72, 202, 228, 0.4);
+    border: 1px solid var(--secondary-color);
+}
+
+.color-marker.event-day {
+    background-color: rgba(2, 62, 138, 0.3);
+    border: 1px solid var(--dark-color);
+}
+
+.color-marker.free-day {
+    background-color: rgba(173, 232, 244, 0.4);
+    border: 1px solid var(--light-color);
+}
+
+/* Day Details Modal */
+.day-details-container {
+    background-color: white;
+    max-width: 1100px;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: none;
+}
+
+.day-details-container.active {
+    display: block;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.day-details-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-details-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.day-details-content {
+    padding: 1.5rem;
+}
+
+.detail-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.detail-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-section h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.detail-info {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.detail-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.detail-item {
+    margin-bottom: 1rem;
+}
+
+.detail-item-title {
+    font-weight: 600;
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.detail-item-content {
+    font-size: 1rem;
+}
+
+.price-info {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .detail-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        font-size: 0.9rem;
+    }
+    
+    .calendar-cell {
+        height: 80px;
+    }
+    
+    .date-number {
+        font-size: 1rem;
+    }
+    
+    .event-preview {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .weekdays-header {
+        font-size: 0.7rem;
+    }
+    
+    .calendar-cell {
+        height: 70px;
+        padding: 3px;
+    }
+    
+    .date-number {
+        font-size: 0.9rem;
+    }
+    
+    .event-preview {
+        font-size: 0.65rem;
+    }
+    
+    .calendar-legend {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        gap: 0.7rem;
+    }
+}
+
+/* Tour Summary Card */
+.tour-summary-card {
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.tour-summary-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+.summary-row.total {
+    border-top: 2px solid var(--primary-color);
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+.tour-notes {
+    background-color: rgba(255, 183, 3, 0.1);
+    border-left: 4px solid var(--warning-color);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+}
+
+.tour-notes h4 {
+    color: var(--warning-color);
+    margin-bottom: 0.8rem;
+}
+
+.tour-notes ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.tour-notes li {
+    margin-bottom: 0.5rem;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--gray-dark);
+}
+
+/* Tour Price Details */
+.tour-price-details {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background-color: rgba(87, 204, 153, 0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.price-label {
+    font-weight: 600;
+    color: var(--gray-dark);
+}
+
+.price-amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--success-color);
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+}
+
+/* Food Places */
+.food-places-section {
+    margin-top: 3rem;
+}
+
+.food-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.food-card {
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card-header {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem;
+}
+
+.food-card-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.food-card-body {
+    padding: 1.2rem;
+}
+
+.food-details {
+    margin-bottom: 1rem;
+}
+
+.food-detail-item {
+    display: flex;
+    margin-bottom: 0.6rem;
+}
+
+.food-detail-icon {
+    width: 24px;
+    margin-right: 0.8rem;
+    color: var(--primary-color);
+}
+
+.food-detail-text {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.food-card-actions {
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+.btn-map {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-map:hover {
+    background-color: var(--dark-color);
+}
+
+.food-tips {
+    margin-top: 3rem;
+    background-color: rgba(0, 119, 182, 0.08);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    border-left: 5px solid var(--primary-color);
+}
+
+.food-tips h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.food-tips ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.food-tips li {
+    padding: 0.6rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    border-bottom: 1px dashed rgba(0, 119, 182, 0.2);
+}
+
+.food-tips li:last-child {
+    border-bottom: none;
+}
+
+.food-tips li:before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .food-tips {
+        padding: 1.2rem;
+    }
 } 

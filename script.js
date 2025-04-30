@@ -1,4 +1,347 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Calendar Dropdown Functionality
+    const calendarCells = document.querySelectorAll('.calendar-cell[data-date]');
+    const dayDetailsContainer = document.getElementById('day-details-container');
+    const detailsDate = document.getElementById('details-date');
+    const detailsContent = document.getElementById('day-details-content');
+    const closeDetails = document.getElementById('close-details');
+    
+    // Day details data
+    const dayDetails = {
+        // May 1
+        '1': {
+            title: 'Departure to Airport',
+            activities: [
+                {
+                    title: 'Departure to Airport',
+                    time: '9:00 PM',
+                    description: 'Depart to the airport for overnight flight'
+                }
+            ]
+        },
+        // May 2
+        '2': {
+            title: 'Arrive in Manila',
+            activities: [
+                {
+                    title: 'Flight from Ho Chi Minh City to Manila',
+                    time: '1:10 AM - 5:15 AM',
+                    description: 'Cebu Pacific 5J 752',
+                    price: 'Trip Cost: ₱12,000 ($215 USD)'
+                },
+                {
+                    title: 'Check-in at Shelton\'s Home',
+                    time: '6:30 AM',
+                    description: 'Located near Taco Bell and Airport'
+                }
+            ],
+            food: [
+                {
+                    title: "Taco Bell",
+                    description: "Fast food Mexican-inspired restaurant",
+                    location: "Moises's requested place",
+                    mapLink: "https://maps.app.goo.gl/UjJ3JD8BwT1eVzfH8"
+                },
+                {
+                    title: "Denny's",
+                    description: "American diner chain",
+                    mapLink: "https://maps.app.goo.gl/U4UVKqdJu8cz18vn6"
+                }
+            ]
+        },
+        // May 3
+        '3': {
+            title: 'Cart Witnessing',
+            activities: [
+                {
+                    title: 'Cart Witnessing',
+                    time: 'All Day',
+                    description: 'Cart witnessing in Manila area'
+                }
+            ],
+            food: [
+                {
+                    title: "Taco Bell",
+                    description: "Fast food Mexican-inspired restaurant",
+                    location: "Lunch after cart witnessing",
+                    mapLink: "https://maps.app.goo.gl/UjJ3JD8BwT1eVzfH8"
+                }
+            ]
+        },
+        // May 4
+        '4': {
+            title: 'Travel to Coron',
+            activities: [
+                {
+                    title: 'Flight from Manila to Coron/Busuanga',
+                    time: '2:35 PM - 3:45 PM',
+                    description: 'Philippine Airlines PR 2965',
+                    price: 'Trip Cost: ₱10,000 ($179 USD)'
+                },
+                {
+                    title: 'Check-in to Airbnb Accommodations',
+                    time: '5:00 PM',
+                    description: 'Room 1: Moe and Thu • Room 2: Jesse and Huong'
+                }
+            ]
+        },
+        // May 5
+        '5': {
+            title: 'Super Ultimate Tour',
+            activities: [
+                {
+                    title: 'Super Ultimate Tour',
+                    time: '9:00 AM - 6:00 PM',
+                    description: 'Kayangan lake • Twin lagoon • Barracuda lake • Coral garden • CYC • Banol beach • Skeleton wreck',
+                    price: '₱1,900 ($34 USD) per person'
+                }
+            ]
+        },
+        // May 6
+        '6': {
+            title: 'Reef & Wreck Tour',
+            activities: [
+                {
+                    title: 'Reef & Wreck Tour',
+                    time: '9:00 AM - 6:00 PM',
+                    description: 'Pass Island • Sangat coral garden • Lusong shipwreck',
+                    price: '₱1,700 ($30 USD) per person + ₱560 ($10 USD) for snorkel rental'
+                }
+            ]
+        },
+        // May 7
+        '7': {
+            title: 'Free Day in Coron',
+            activities: [
+                {
+                    title: 'Free Day',
+                    time: 'All Day',
+                    description: 'Explore the town or relax at the beach'
+                }
+            ]
+        },
+        // May 8
+        '8': {
+            title: 'Return to Manila',
+            activities: [
+                {
+                    title: 'Flight from Coron/Busuanga to Manila',
+                    time: '7:45 AM - 8:55 AM',
+                    description: 'Philippine Airlines PR 2962',
+                    price: 'Trip Cost: ₱10,000 ($179 USD)'
+                },
+                {
+                    title: 'Check-in to Witness Family Guest House',
+                    time: '10:30 AM',
+                    description: 'Located near KMS venue'
+                }
+            ]
+        },
+        // May 9
+        '9': {
+            title: 'Bethel Lunch',
+            activities: [
+                {
+                    title: 'Special Lunch at Bethel',
+                    time: '12:00 PM',
+                    description: 'Lunch at Bethel branch'
+                }
+            ],
+            food: [
+                {
+                    title: "Taco Bell",
+                    description: "Fast food Mexican-inspired restaurant",
+                    location: "Dinner after Bethel visit",
+                    mapLink: "https://maps.app.goo.gl/UjJ3JD8BwT1eVzfH8"
+                }
+            ]
+        },
+        // May 10
+        '10': {
+            title: 'KMS',
+            activities: [
+                {
+                    title: 'KMS Program',
+                    time: 'All Day',
+                    description: 'Special spiritual program'
+                }
+            ]
+        },
+        // May 11
+        '11': {
+            title: 'Divisoria Shopping / Moe Mating',
+            activities: [
+                {
+                    title: 'Shopping at Divisoria',
+                    time: 'Morning to Afternoon',
+                    description: 'Famous shopping district in Manila'
+                }
+            ],
+            food: [
+                {
+                    title: "Taco Bell",
+                    description: "Fast food Mexican-inspired restaurant",
+                    mapLink: "https://maps.app.goo.gl/UjJ3JD8BwT1eVzfH8"
+                },
+                {
+                    title: "Wendy's",
+                    description: "American fast food chain",
+                    mapLink: "https://maps.app.goo.gl/vFkLdw4LxkBw5NWYA"
+                },
+                {
+                    title: "Crosta Pizzeria",
+                    description: "Artisan Pizza",
+                    location: "Salcedo Village",
+                    address: "104 HV Dela Costa, Cor L.P. Leviste Street, Makati",
+                    mapLink: "https://maps.app.goo.gl/bZjVzUmZeVKbxdz88"
+                },
+                {
+                    title: "a mano BGC",
+                    description: "Italian restaurant",
+                    location: "One Bonifacio High Street",
+                    address: "Ground Floor, Unit LG22, One Bonifacio, High Street, Taguig",
+                    mapLink: "https://maps.app.goo.gl/Wbzd89MKtBxXBhay5"
+                }
+            ]
+        },
+        // May 12
+        '12': {
+            title: 'Return to Ho Chi Minh City',
+            activities: [
+                {
+                    title: 'Flight from Manila to Ho Chi Minh City',
+                    time: '7:35 PM - 9:20 PM',
+                    description: 'Cebu Pacific 5J 753',
+                    price: 'Trip Cost: ₱12,000 ($215 USD)'
+                }
+            ]
+        }
+    };
+    
+    // Open day details
+    function openDayDetails(date) {
+        const details = dayDetails[date];
+        if (!details) return;
+        
+        // Set date in header
+        detailsDate.textContent = `May ${date}, 2025`;
+        
+        // Build content
+        let contentHTML = '';
+        
+        // Activities section
+        if (details.activities && details.activities.length > 0) {
+            contentHTML += `
+                <div class="detail-section">
+                    <h4>Activities</h4>
+                    <div class="detail-info">
+            `;
+            
+            details.activities.forEach(activity => {
+                contentHTML += `
+                    <div class="detail-col">
+                        <div class="detail-item">
+                            <div class="detail-item-title">Activity</div>
+                            <div class="detail-item-content">${activity.title}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-item-title">Time</div>
+                            <div class="detail-item-content">${activity.time}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-item-title">Details</div>
+                            <div class="detail-item-content">${activity.description}</div>
+                        </div>
+                        ${activity.price ? `
+                        <div class="detail-item">
+                            <div class="detail-item-title">Price</div>
+                            <div class="detail-item-content price-info">${activity.price}</div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            contentHTML += `
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Food places section
+        if (details.food && details.food.length > 0) {
+            contentHTML += `
+                <div class="detail-section">
+                    <h4>Food Options</h4>
+                    <div class="detail-info">
+            `;
+            
+            details.food.forEach(food => {
+                contentHTML += `
+                    <div class="detail-col">
+                        <div class="detail-item">
+                            <div class="detail-item-title">Restaurant</div>
+                            <div class="detail-item-content">${food.title}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-item-title">Description</div>
+                            <div class="detail-item-content">${food.description}</div>
+                        </div>
+                        ${food.location ? `
+                        <div class="detail-item">
+                            <div class="detail-item-title">Location</div>
+                            <div class="detail-item-content">${food.location}</div>
+                        </div>
+                        ` : ''}
+                        ${food.address ? `
+                        <div class="detail-item">
+                            <div class="detail-item-title">Address</div>
+                            <div class="detail-item-content">${food.address}</div>
+                        </div>
+                        ` : ''}
+                        ${food.mapLink ? `
+                        <div class="detail-item">
+                            <div class="detail-item-title">Map</div>
+                            <div class="detail-item-content">
+                                <a href="${food.mapLink}" target="_blank">View on Google Maps</a>
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            contentHTML += `
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Set content
+        detailsContent.innerHTML = contentHTML;
+        
+        // Show the details container
+        dayDetailsContainer.classList.add('active');
+        
+        // Scroll to details
+        dayDetailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Add click event to each calendar cell
+    calendarCells.forEach(cell => {
+        cell.addEventListener('click', function() {
+            const date = this.getAttribute('data-date');
+            if (date) {
+                openDayDetails(date);
+            }
+        });
+    });
+    
+    // Close details
+    closeDetails.addEventListener('click', function() {
+        dayDetailsContainer.classList.remove('active');
+    });
+    
     // Tour data
     const tourData = {
         'town-tour': {
