@@ -199,7 +199,6 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--gray);
 }
@@ -208,38 +207,7 @@ section {
     margin-bottom: 0;
 }
 
-.toggle-btn {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toggle-btn i {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.collapsible-section.active .toggle-btn i {
-    transform: rotate(180deg);
-}
-
 .section-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    padding: 0;
-}
-
-.collapsible-section.active .section-content {
-    max-height: 5000px;
     padding-top: 1.5rem;
 }
 
