@@ -13,6 +13,10 @@
     --gray-dark: #6c757d;
     --text-color: #212529;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --manila-color: #4361ee;
+    --manila-light: rgba(67, 97, 238, 0.2);
+    --coron-color: #f72585;
+    --coron-light: rgba(247, 37, 133, 0.15);
 }
 
 * {
@@ -70,12 +74,13 @@ h3 {
 /* Buttons */
 .btn-primary, .btn-secondary, .btn-select, .btn-book {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 1.8rem;
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
+    text-align: center;
 }
 
 .btn-primary {
@@ -115,27 +120,61 @@ h3 {
     background-color: var(--secondary-color);
 }
 
-/* Header */
-header {
+/* Modern Header */
+.main-header {
     background-color: white;
     box-shadow: var(--shadow);
-    padding: 1rem 0;
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header .container {
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.header-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    color: var(--gray-dark);
+    font-size: 1.2rem;
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
-.logo {
-    height: 60px;
+.main-nav a {
+    color: var(--gray-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.contact-info {
-    font-weight: 500;
+.main-nav a:hover, .main-nav a.active {
     color: var(--primary-color);
+    background-color: var(--light-color);
 }
 
 /* Main Content */
@@ -151,645 +190,56 @@ section {
     padding: 2rem;
 }
 
-/* Itinerary Section */
-.bookings {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.booking-item {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
+/* Collapsible Sections */
+.collapsible-section {
     overflow: hidden;
 }
 
-.booking-header {
-    display: flex;
-    align-items: center;
-    background-color: var(--gray-light);
-    padding: 1rem;
-    border-bottom: 1px solid var(--gray);
-}
-
-.booking-header h3 {
-    margin-bottom: 0;
-    margin-right: auto;
-}
-
-.tag {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-right: 1rem;
-}
-
-.confirmed {
-    background-color: rgba(87, 204, 153, 0.2);
-    color: var(--success-color);
-}
-
-.booking-id {
-    font-size: 0.8rem;
-    color: var(--gray-dark);
-}
-
-.flight-info {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--gray);
-}
-
-.airline {
+.section-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.airline-logo {
-    font-weight: 600;
-    color: #d00000;
-}
-
-.airline-ref {
-    font-size: 0.8rem;
-    color: var(--gray-dark);
-}
-
-.journey {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1rem;
     align-items: center;
-}
-
-.departure, .arrival {
-    display: flex;
-    gap: 1rem;
-}
-
-.time {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.airport {
-    font-weight: 500;
-}
-
-.airport-name {
-    font-size: 0.85rem;
-    color: var(--gray-dark);
-}
-
-.flight-duration {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.8rem;
-    background-color: var(--gray-light);
-    border-radius: 20px;
-    text-align: center;
-}
-
-.action-buttons {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid var(--gray);
-}
-
-.activity-suggestions {
-    padding: 1rem;
-}
-
-.activity-suggestions h4 {
-    margin-bottom: 1rem;
-    color: var(--gray-dark);
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     cursor: pointer;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gray);
 }
 
-.activity-suggestions h4::after {
-    content: "▼";
-    font-size: 0.8rem;
+.section-header h2 {
+    margin-bottom: 0;
 }
 
-.activity-card {
-    display: flex;
-    gap: 1rem;
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.activity-card img {
-    width: 120px;
-    height: 90px;
-    object-fit: cover;
-}
-
-.activity-info {
-    padding: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.activity-info h5 {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.rating {
-    color: #ff9500;
-    font-size: 0.9rem;
-}
-
-/* Tour Planner Section */
-.tour-selector {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-}
-
-.tours-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.tour-card {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.tour-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.tour-card h4 {
-    color: var(--primary-color);
-}
-
-.tour-time {
-    color: var(--gray-dark);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.tour-price {
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.tour-details {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--gray);
-    font-size: 0.9rem;
-}
-
-/* Tour Summary */
-.tour-summary {
-    background-color: var(--gray-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    position: sticky;
-    top: 2rem;
-}
-
-.selected-tours {
-    margin: 1rem 0;
-    min-height: 100px;
-}
-
-.empty-state {
-    color: var(--gray-dark);
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.summary-details {
-    border-top: 1px solid var(--gray);
-    padding-top: 1rem;
-}
-
-.summary-item, .total {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.total {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    border-top: 1px solid var(--gray);
-    padding-top: 1rem;
-}
-
-/* Tour Prices Section */
-.price-tables {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td {
-    padding: 0.75rem 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--gray);
-}
-
-th {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--gray-light);
-}
-
-/* Responsive styles for the price tables */
-@media (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 2rem 0 1rem;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
-.company-info {
-    max-width: 300px;
-}
-
-.footer-logo {
-    height: 50px;
-    margin-bottom: 1rem;
-}
-
-.footer-links ul {
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-links a {
-    color: white;
-}
-
-.footer-links a:hover {
-    color: var(--light-color);
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .tour-selector {
-        grid-template-columns: 1fr;
-    }
-    
-    .tour-summary {
-        position: static;
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .footer-links ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-/* Tour Selection Styling */
-.tour-card.selected {
-    border-color: var(--success-color);
-    background-color: rgba(87, 204, 153, 0.1);
-    box-shadow: 0 0 0 2px var(--success-color);
-}
-
-.selected-tour-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: white;
-}
-
-.tour-info h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-    color: var(--primary-color);
-}
-
-.tour-info p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--gray-dark);
-}
-
-.tour-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.tour-price {
-    font-weight: 600;
-}
-
-.btn-remove {
+.toggle-btn {
     background: none;
     border: none;
-    color: var(--danger-color);
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-}
-
-.btn-remove:hover {
-    background-color: var(--danger-color);
-    color: white;
-}
-
-.summary-item {
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.summary-item:hover {
-    background-color: var(--gray);
-}
-
-/* Activity suggestion collapsed state */
-.activity-suggestions h4.collapsed::after {
-    content: "▲";
-}
-
-/* Complete Travel Itinerary Section */
-#complete-itinerary {
-    margin-bottom: 3rem;
-}
-
-.flight-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-}
-
-.flight-card {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.flight-card h3 {
-    background-color: var(--accent-color);
-    color: white;
-    margin: 0;
-    padding: 1rem;
-    font-size: 1.3rem;
-}
-
-.flight-details {
-    padding: 1.5rem;
-}
-
-.flight-info-full {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.airline-details, .passenger-info {
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed var(--gray);
-}
-
-.route-details {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.departure-details, .arrival-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.departure-details h4, .arrival-details h4 {
-    margin-bottom: 0.5rem;
     color: var(--primary-color);
-}
-
-.flight-time {
     font-size: 1.2rem;
-    font-weight: 600;
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--light-color);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Accommodations */
-.accommodations {
-    margin-bottom: 2.5rem;
+.toggle-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
 }
 
-.accommodation-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+.collapsible-section.active .toggle-btn i {
+    transform: rotate(180deg);
 }
 
-.accommodation-card {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-}
-
-.accommodation-card h4 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--light-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.coron-rooms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.room {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: var(--gray-light);
-}
-
-.room h5 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.room a {
-    word-break: break-all;
-}
-
-/* Tour Bookings */
-.tour-bookings {
-    margin-bottom: 2.5rem;
-}
-
-.booked-tours {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.booked-tour {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
+.section-content {
+    max-height: 0;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    transition: max-height 0.5s ease;
 }
 
-.tour-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 1rem;
-}
-
-.tour-header h4, .tour-header p {
-    margin: 0;
-}
-
-.tour-body {
-    padding: 1rem;
-}
-
-.tour-time {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.tour-locations {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.tour-extras {
-    font-style: italic;
-    color: var(--gray-dark);
-    border-top: 1px dashed var(--gray);
-    padding-top: 0.5rem;
-}
-
-.additional-items {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.additional-items .item {
-    background-color: #57cc9930;
-    border-radius: 8px;
-    padding: 1rem;
-    min-width: 200px;
-}
-
-/* Food Places */
-.food-places {
-    margin-bottom: 2rem;
-}
-
-.food-item {
-    border-left: 4px solid var(--success-color);
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-}
-
-/* Responsive adjustments for the new sections */
-@media (max-width: 768px) {
-    .route-details {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .flight-time {
-        margin: 1rem auto;
-    }
-    
-    .coron-rooms {
-        grid-template-columns: 1fr;
-    }
+.collapsible-section.active .section-content {
+    max-height: 5000px;
+    padding-top: 1.5rem;
 }
 
 /* Calendar Styles */
@@ -840,8 +290,8 @@ footer {
 }
 
 .calendar-cell {
-    height: 100px;
-    padding: 5px;
+    height: 120px;
+    padding: 8px;
     border-right: 1px solid var(--gray);
     border-top: 1px solid var(--gray);
     position: relative;
@@ -897,6 +347,25 @@ footer {
     border-left: 4px solid var(--light-color);
 }
 
+/* Manila and Coron Styles */
+.manila-day {
+    border-top: 3px solid var(--manila-color);
+}
+
+.coron-day {
+    border-top: 3px solid var(--coron-color);
+}
+
+.color-marker.manila-day {
+    background-color: var(--manila-light);
+    border: 1px solid var(--manila-color);
+}
+
+.color-marker.coron-day {
+    background-color: var(--coron-light);
+    border: 1px solid var(--coron-color);
+}
+
 /* Calendar Legend */
 .calendar-legend {
     display: flex;
@@ -921,40 +390,98 @@ footer {
 
 .color-marker {
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
 .color-marker.arrival-day {
-    background-color: rgba(87, 204, 153, 0.5);
+    background-color: rgba(87, 204, 153, 0.2);
     border: 1px solid var(--success-color);
 }
 
 .color-marker.departure-day {
-    background-color: rgba(230, 57, 70, 0.3);
+    background-color: rgba(230, 57, 70, 0.1);
     border: 1px solid var(--danger-color);
 }
 
 .color-marker.travel-day {
-    background-color: rgba(255, 183, 3, 0.4);
+    background-color: rgba(255, 183, 3, 0.2);
     border: 1px solid var(--warning-color);
 }
 
 .color-marker.tour-day {
-    background-color: rgba(72, 202, 228, 0.4);
+    background-color: rgba(72, 202, 228, 0.2);
     border: 1px solid var(--secondary-color);
 }
 
 .color-marker.event-day {
-    background-color: rgba(2, 62, 138, 0.3);
+    background-color: rgba(2, 62, 138, 0.1);
     border: 1px solid var(--dark-color);
 }
 
 .color-marker.free-day {
-    background-color: rgba(173, 232, 244, 0.4);
+    background-color: rgba(173, 232, 244, 0.2);
     border: 1px solid var(--light-color);
+}
+
+/* Image Gallery */
+.featured-images {
+    margin-bottom: 3rem;
+}
+
+.featured-images h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
 }
 
 /* Day Details Modal */
@@ -996,60 +523,6 @@ footer {
     line-height: 1;
 }
 
-.day-details-content {
-    padding: 1.5rem;
-}
-
-.detail-section {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--gray);
-}
-
-.detail-section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.detail-section h4 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-}
-
-.detail-info {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.detail-col {
-    flex: 1;
-    min-width: 200px;
-}
-
-.detail-item {
-    margin-bottom: 1rem;
-}
-
-.detail-item-title {
-    font-weight: 600;
-    color: var(--gray-dark);
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-}
-
-.detail-item-content {
-    font-size: 1rem;
-}
-
-.price-info {
-    font-weight: 600;
-    color: var(--success-color);
-}
-
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -1061,10 +534,95 @@ footer {
     }
 }
 
-@media (max-width: 992px) {
-    .detail-info {
-        flex-direction: column;
-        gap: 1rem;
+/* Timeline and location cards */
+.trip-timeline {
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 60px;
+    bottom: -30px;
+    width: 2px;
+    background-color: var(--light-color);
+}
+
+.timeline-date {
+    flex: 0 0 60px;
+    margin-right: 1.5rem;
+}
+
+.date-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: var(--gray-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .header-content {
+        margin-bottom: 0;
+        text-align: left;
+    }
+    
+    .main-nav {
+        width: auto;
     }
 }
 
@@ -1074,7 +632,8 @@ footer {
     }
     
     .calendar-cell {
-        height: 80px;
+        height: 100px;
+        padding: 5px;
     }
     
     .date-number {
@@ -1084,6 +643,34 @@ footer {
     .event-preview {
         font-size: 0.7rem;
     }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-item:not(:last-child)::after {
+        left: 28px;
+        top: 60px;
+        bottom: auto;
+        height: 30px;
+    }
+    
+    .gallery-item img {
+        height: 160px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1092,7 +679,7 @@ footer {
     }
     
     .calendar-cell {
-        height: 70px;
+        height: 80px;
         padding: 3px;
     }
     
@@ -1112,221 +699,78 @@ footer {
     }
 }
 
-/* Tour Summary Card */
-.tour-summary-card {
+/* Cost Summary */
+.cost-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.cost-card {
     background-color: var(--gray-light);
     border-radius: 8px;
     padding: 1.5rem;
-    margin: 2rem 0;
-    box-shadow: var(--shadow);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.tour-summary-card h3 {
+.cost-card h3 {
     color: var(--primary-color);
     margin-bottom: 1.2rem;
     text-align: center;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.5rem;
 }
 
-.summary-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.summary-row {
+.cost-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--gray);
-}
-
-.summary-row.total {
-    border-top: 2px solid var(--primary-color);
-    border-bottom: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    padding-top: 1rem;
-}
-
-.price {
-    font-weight: 600;
-    color: var(--success-color);
-}
-
-.tour-notes {
-    background-color: rgba(255, 183, 3, 0.1);
-    border-left: 4px solid var(--warning-color);
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 2rem 0;
-}
-
-.tour-notes h4 {
-    color: var(--warning-color);
     margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--gray);
 }
 
-.tour-notes ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
+.cost-item:last-child {
+    border-bottom: none;
 }
 
-.tour-notes li {
-    margin-bottom: 0.5rem;
-}
-
-.section-intro {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: var(--gray-dark);
-}
-
-/* Tour Price Details */
-.tour-price-details {
-    margin: 1rem 0;
-    padding: 0.8rem;
-    background-color: rgba(87, 204, 153, 0.1);
-    border-radius: 4px;
+/* Key Locations */
+.location-cards {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 1.5rem;
 }
 
-.price-label {
-    font-weight: 600;
-    color: var(--gray-dark);
-}
-
-.price-amount {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--success-color);
-}
-
-.price-note {
-    font-size: 0.9rem;
-    color: var(--gray-dark);
-}
-
-/* Food Places */
-.food-places-section {
-    margin-top: 3rem;
-}
-
-.food-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-.food-card {
+.location-card {
+    flex: 1;
+    min-width: 300px;
     border: 1px solid var(--gray);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
 }
 
-.food-card:hover {
-    transform: translateY(-5px);
-}
-
-.food-card-header {
+.location-card h3 {
     background-color: var(--accent-color);
     color: white;
-    padding: 1rem;
-}
-
-.food-card-header h4 {
     margin: 0;
-    font-size: 1.2rem;
-}
-
-.food-card-body {
-    padding: 1.2rem;
-}
-
-.food-details {
-    margin-bottom: 1rem;
-}
-
-.food-detail-item {
-    display: flex;
-    margin-bottom: 0.6rem;
-}
-
-.food-detail-icon {
-    width: 24px;
-    margin-right: 0.8rem;
-    color: var(--primary-color);
-}
-
-.food-detail-text {
-    flex: 1;
-    font-size: 0.95rem;
-}
-
-.food-card-actions {
-    margin-top: 1.2rem;
+    padding: 1rem;
     text-align: center;
 }
 
-.btn-map {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.location-details {
+    padding: 1.5rem;
 }
 
-.btn-map:hover {
-    background-color: var(--dark-color);
+.location-item {
+    margin-bottom: 1.5rem;
 }
 
-.food-tips {
-    margin-top: 3rem;
-    background-color: rgba(0, 119, 182, 0.08);
-    border-radius: 8px;
-    padding: 1.5rem 2rem;
-    border-left: 5px solid var(--primary-color);
+.location-item:last-child {
+    margin-bottom: 0;
 }
 
-.food-tips h3 {
+.location-item h4 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.food-tips ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.food-tips li {
-    padding: 0.6rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-    border-bottom: 1px dashed rgba(0, 119, 182, 0.2);
-}
-
-.food-tips li:last-child {
-    border-bottom: none;
-}
-
-.food-tips li:before {
-    content: '•';
-    color: var(--primary-color);
-    font-weight: bold;
-    position: absolute;
-    left: 0.25rem;
-}
-
-@media (max-width: 768px) {
-    .food-tips {
-        padding: 1.2rem;
-    }
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-color);
+    padding-bottom: 0.3rem;
 } 
