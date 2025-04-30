@@ -828,4 +828,101 @@ footer {
     border-top: 1px solid var(--primary-color);
     font-size: 0.9rem;
     color: var(--gray);
+}
+
+/* Food Page Specific Styles */
+.food-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust minmax for better fit */
+    gap: 2rem;
+}
+
+.food-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure header corners are rounded */
+}
+
+.food-card-header {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.food-card-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.food-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Make body grow to fill space */
+}
+
+.food-details {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.food-detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+}
+
+.food-detail-icon {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.food-card-actions {
+    margin-top: auto; /* Push button to the bottom */
+}
+
+.btn-map {
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    gap: 8px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-map:hover {
+    background-color: var(--primary-color);
+}
+
+.food-tips {
+    background-color: var(--light-color);
+    border: 1px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-radius: 8px;
+}
+
+.food-tips h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.food-tips ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.food-tips li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 } 
