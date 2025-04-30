@@ -323,8 +323,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the details container
         dayDetailsContainer.classList.add('active');
         
-        // Scroll to details
-        dayDetailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Calculate scroll position considering sticky header
+        const header = document.querySelector('.main-header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const elementTop = dayDetailsContainer.getBoundingClientRect().top + window.scrollY;
+        const targetScrollY = elementTop - headerHeight - 20; // 20px buffer
+
+        window.scrollTo({
+            top: targetScrollY,
+            behavior: 'smooth'
+        });
     }
     
     // Add click event to each calendar cell
