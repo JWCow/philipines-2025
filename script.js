@@ -322,12 +322,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Show the details container
         dayDetailsContainer.classList.add('active');
-        
-        // Calculate scroll position considering sticky header
-        const header = document.querySelector('.main-header');
-        const headerHeight = header ? header.offsetHeight : 0;
+
+        // Calculate scroll position (simpler offset now header isn't sticky)
         const elementTop = dayDetailsContainer.getBoundingClientRect().top + window.scrollY;
-        const targetScrollY = elementTop - headerHeight - 20; // 20px buffer
+        const targetScrollY = elementTop - 20; // 20px buffer from the top edge
 
         window.scrollTo({
             top: targetScrollY,
@@ -567,5 +565,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
+    });
+
+    // Scroll to Top Button Functionality
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
     });
 }); 
